@@ -10,3 +10,9 @@ h1{
   font-family: sans-serif;
   margin-bottom: 5vh;
 }
+
+p { 
+  margin-top: 6vh;
+  font-family: sans-serif;
+  font-size: 1em;
+}
