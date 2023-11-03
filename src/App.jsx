@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Button from './Button'
+import styles from "./Button/styles.module.css"
 
 export default 
 
@@ -8,6 +9,7 @@ function App() {
 
     const [password, setPassword] = useState("Random Password")
     const [copyText, setCopyText] = useState("Copy")
+    const [buttonClassName, setButtonClassName] = useState(styles.wrapper)
 
     function generate() {
       const characters = "'1234567890-=!@#$%¨&*()_+qwertyuiop[asdfghjklç~]zxcvbnm,.;/QWERTYUIOP{ASDFGHJKLÇ^}ZXCVBNM<>:?"
@@ -19,18 +21,20 @@ function App() {
     }
     setPassword(newPassword)
     setCopyText("Copy")
+    setButtonClassName (styles.wrapper)
   }
 
     function copyToClipboard () {
       window.navigator.clipboard.writeText(password)
       setCopyText("Copied!")
+      setButtonClassName (styles.wrapperCopied)
     }
 
 
   return (
     <>
       <h1>Password Generator</h1>
-      <Button Text={copyText} onClick={copyToClipboard}></Button>
+      <Button Text={copyText} onClick={copyToClipboard} className={buttonClassName}></Button>
       <Button Text="Generate" onClick={generate} ></Button>
       <p>{password}</p>
     </>
