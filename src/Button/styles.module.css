@@ -17,6 +17,12 @@
     cursor: pointer;
 }
 
+.wrapper:active {
+    color: rgb(100, 100, 100);
+    width: 75px;
+    transition: 0.3s;
+}
+
 .wrapperCopied {
     width: 75px;
     text-decoration: none;
