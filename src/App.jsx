@@ -7,7 +7,7 @@ export default
 
 function App() {
 
-    const [password, setPassword] = useState("Random Password")
+    const [password, setPassword] = useState("Get a random Password")
     const [copyText, setCopyText] = useState("Copy")
     const [buttonClassName, setButtonClassName] = useState(styles.wrapper)
 
@@ -33,10 +33,14 @@ function App() {
 
   return (
     <>
+      <div className='container'>
       <h1>Password Generator</h1>
-      <Button Text={copyText} onClick={copyToClipboard} className={buttonClassName}></Button>
-      <Button Text="Generate" onClick={generate} ></Button>
-      <p>{password}</p>
+        <div className="button-container">
+          <Button Text={copyText} onClick={copyToClipboard} className={buttonClassName}></Button>
+          <Button Text="Generate" onClick={generate} ></Button>
+        </div>
+        <p>{password}</p>
+      </div>
     </>
   )
 }

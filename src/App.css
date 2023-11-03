@@ -16,3 +16,13 @@ p {
   font-family: sans-serif;
   font-size: 1em;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10vh;
+}
+
