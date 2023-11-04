@@ -1,0 +1,18 @@
+.wrapper {
+    width: 77px;
+    text-decoration: none;
+    border: solid;
+    padding: 8px;
+    margin: 2vh 2vw 2vh 2vw;
+    border-radius: 4px;
+    color: rgb(100, 100, 100);
+    font-family: sans-serif;
+    font-weight: bold;
+    transition: 0.3s;
+    background-color: rgb(255, 255, 255);
+}
+
+.wrapper:hover {
+    color: rgb(1, 1, 1);
+    cursor: pointer;
+}

@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import Button from './Button'
-import styles from "./Button/styles.module.css"
+import Button from './components/Button'
+import SizeInputp from './components/SizeInput'
+import styles from "./components/Button/styles.module.css"
 
 export default 
 
@@ -35,18 +36,20 @@ function App() {
     <>
       <div className='container'>
       <h1>Password Generator</h1>
-        <div>
-          <label htmlFor="passwordSize">Password Size:</label>
-          <input 
-            className={styles.wrapper}
-            type="number" 
-            id='passwordSize' 
-            min={5}
-            max={99}
-            value={passwordSize}
-            onChange={ (ev) => setPasswordSize(ev.target.value)  }
-             />
-        </div>
+        
+      <div>
+          <label htmlFor="passwordSize">Size:</label>
+          <SizeInputp
+          type="number" 
+          id='passwordSize' 
+          min={5}
+          max={99}
+          value={passwordSize}
+          onChange={ (ev) => setPasswordSize(ev.target.value)  }
+        >
+          </SizeInputp> 
+      </div>
+        
         <div className="button-container">
           <Button Text={copyText} onClick={copyToClipboard} className={buttonClassName}></Button>
           <Button Text="Generate" onClick={generate} ></Button>
