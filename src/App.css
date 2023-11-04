@@ -26,3 +26,7 @@ p {
   margin-bottom: 10vh;
 }
 
+label {    
+    font-family: sans-serif;
+    font-size: 0.9em;
+}
