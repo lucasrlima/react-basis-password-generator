@@ -11,7 +11,8 @@ function App() {
     const [password, setPassword] = useState("Get a random Password")
     const [copyText, setCopyText] = useState("Copy")
     const [buttonClassName, setButtonClassName] = useState(styles.wrapper)
-    const [passwordSize, setPasswordSize] = useState(12)
+    const [passwordSize, setPasswordSize] = useState(10)
+    const [showInput, setShowInput] = useState(false)
 
     function generate() {
       const characters = "'1234567890-=!@#$%¨&*()_+qwertyuiop[asdfghjklç~]zxcvbnm,.;/QWERTYUIOP{ASDFGHJKLÇ^}ZXCVBNM<>:?"
@@ -38,12 +39,26 @@ function App() {
       <h1>Password Generator</h1>
         
       <div>
-          <label htmlFor="passwordSize">Size:</label>
-          <SizeInputp
-            passwordSize={passwordSize}
-            setPasswordSize={setPasswordSize}
-          >
-          </SizeInputp> 
+          <label htmlFor="showInput">Custom password size</label>
+          <input 
+            type="checkbox"
+            id="showInput" 
+            value={showInput}
+            onChange={() => setShowInput(currentState => !currentState)}
+          
+          />
+          
+        {showInput ? (
+          <div>
+            <label htmlFor="passwordSize"></label>
+
+            <SizeInputp
+              passwordSize={passwordSize}
+              setPasswordSize={setPasswordSize}
+            >
+            </SizeInputp> 
+          </div> ) : null
+      } 
       </div>
         
         <div className="button-container">

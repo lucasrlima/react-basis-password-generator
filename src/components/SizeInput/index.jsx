@@ -18,7 +18,7 @@ function SizeInputp(props) {
         min={5}
         max={99}
         value={props.passwordSize}
-        onChange={ (ev) => props.setPasswordSize(ev.target.value)  }
+        onChange={ (ev) => props.setPasswordSize(+ev.target.value)  }
       />
         
     )
