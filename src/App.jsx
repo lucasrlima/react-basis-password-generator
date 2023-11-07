@@ -40,13 +40,9 @@ function App() {
       <div>
           <label htmlFor="passwordSize">Size:</label>
           <SizeInputp
-          type="number" 
-          id='passwordSize' 
-          min={5}
-          max={99}
-          value={passwordSize}
-          onChange={ (ev) => setPasswordSize(ev.target.value)  }
-        >
+            passwordSize={passwordSize}
+            setPasswordSize={setPasswordSize}
+          >
           </SizeInputp> 
       </div>
         
