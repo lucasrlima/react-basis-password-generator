@@ -32,6 +32,13 @@ function App() {
       setButtonClassName (styles.wrapperCopied)
     }
 
+    function handleCheckboxChange() {
+      if (showInput) {
+        setPasswordSize(10); // Reset password size when disabling the checkbox.
+      }
+      setShowInput((currentState) => !currentState);
+    }
+
 
   return (
     <>
@@ -44,7 +51,7 @@ function App() {
             type="checkbox"
             id="showInput" 
             value={showInput}
-            onChange={() => setShowInput(currentState => !currentState)}
+            onChange={handleCheckboxChange}
           
           />
           
